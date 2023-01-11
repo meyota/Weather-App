@@ -1,3 +1,4 @@
+// Decalre a variable
 let loc =document.getElementById("location");
 let tempicon=document.getElementById("temp-icon");
 let tempvalue=document.getElementById("temp-value");
@@ -18,7 +19,7 @@ SearchInput.value='';
 
 });
 
-
+// code for particular location
 
 const getWeather=async (city)=>
 {
@@ -40,27 +41,27 @@ const getWeather=async (city)=>
         tempvalue.textContent=Math.round(feels_like-273);
         if(id<300 && id>200)
         {
-            tempicon.src="./icons/thunderstorm.svg"
+            tempicon.src="./icons/thunderstorm.png"
         }
        else  if(id<400 && id>300)
         {
-            tempicon.src="./icons/cloud-solid.svg"
+            tempicon.src="./icons/cloud-solid.png"
         }
        else if(id<600&& id>500)
         {
-            tempicon.src="./icons/rain.svg"
+            tempicon.src="./icons/rain.png"
         }
        else  if(id<700 && id>600)
         {
-            tempicon.src="./icons/snow.svg"
+            tempicon.src="./icons/snow.png"
         }
        else  if(id<800 && id>700)
         {
-            tempicon.src="./icons/clouds.svg"
+            tempicon.src="./icons/clouds.png"
         }
          else if(id==800)
         {
-            tempicon.src="./icons/clouds-and-sun.svg"
+            tempicon.src="./icons/clouds-and-sun.png"
         }
 
 
@@ -79,11 +80,14 @@ catch(error)
 };
 
 
+// Takes users current location
 
 window.addEventListener("load",()=>{
 
     let lon;
     let lat;
+
+    // checks if the browser supports geolocaliation
 
     if(navigator.geolocation)
     {
@@ -94,16 +98,21 @@ window.addEventListener("load",()=>{
             lat=position.coords.latitude;
 
                 const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f775fa788ff6def2f93ebedcc62377a5 `
+                
+                // fetch data from api
 
                 fetch(api).then((response)=>{
                     return response.json();
                 })
+                // convert json to text data
 
                 .then (data =>
                     {
                     const{name}=data;
                     const{feels_like}=data.main;
                     const{id,main}=data.weather[0];
+
+                    // set current location to id
                     
                     loc.textContent=name;
                     climate.textContent=main;
@@ -112,27 +121,27 @@ window.addEventListener("load",()=>{
 
                     if(id<300 && id>200)
                     {
-                        tempicon.src="./icons/thunderstorm.svg"
+                        tempicon.src="./icons/thunderstorm.png"
                     }
                    else  if(id<400 && id>300)
                     {
-                        tempicon.src="./icons/cloud-solid.svg"
+                        tempicon.src="./icons/cloud-solid.png"
                     }
                    else if(id<600&& id>500)
                     {
-                        tempicon.src="./icons/rain.svg"
+                        tempicon.src="./icons/rain.png"
                     }
                    else  if(id<700 && id>600)
                     {
-                        tempicon.src="./icons/snow.svg"
+                        tempicon.src="./icons/snow.png"
                     }
                    else  if(id<800 && id>700)
                     {
-                        tempicon.src="./icons/clouds.svg"
+                        tempicon.src="./icons/clouds.png"
                     }
                      else if(id==800)
                     {
-                        tempicon.src="./icons/clouds-and-sun.svg"
+                        tempicon.src="./icons/clouds-and-sun.png"
                     }
 
                     
