@@ -5,7 +5,7 @@
 }
 body{
     height: auto;
-    background-color: rgb(47, 75, 107);
+    background-color: rgb(184, 200, 218);
 }
 #search-form
 {
@@ -22,7 +22,7 @@ body{
 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ body{
 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: antiquewhite;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 #temp-icon
